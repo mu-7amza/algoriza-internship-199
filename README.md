@@ -29,7 +29,9 @@ The project is structured with separation of concerns in mind, following Onion A
 ### 4.Sending Mails
 
 - **DoctorRegistration**: Doctors can sign in with credentials that have been sent to their mail.
-  ![Screenshot_20231209-073454_Gmail](https://github.com/mu-7amza/algoriza-internship-199/assets/109220973/f5463379-d4f6-4bc3-9988-4add18dc6c79)
+
+ ![Screenshot_20231209-073454_Gmail](https://github.com/mu-7amza/algoriza-internship-199/assets/109220973/450445f8-83c8-4745-a1ce-633ad85503a4)
+
 
 ### 5. ASP.NET Core Web API
 
