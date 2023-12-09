@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aNxQr86/UK/wJK4TbNapFxDyqZCqKH6ypP8Ozcoa/vuMq+lCaEZbeyo1buB1A6jrxlDT8kEpaYVkdIFvFejFCg==",
+  "dgSpecHash": "03GlMEjwX31+W9lQ/JPoXOzdfLoJgAZfrg4AIcpOs8OFXNJokJVgObNXT5QzO/LiYN3HtyMgoekfD7p9ohd0IQ==",
   "success": true,
-  "projectFilePath": "G:\\Projects\\Vezeeta-Api\\Repositery\\Infrastructure.csproj",
+  "projectFilePath": "G:\\Repos\\algoriza-internship-199\\Repositery\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\7amzawy\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\7amzawy\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

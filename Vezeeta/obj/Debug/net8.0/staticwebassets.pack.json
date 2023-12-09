@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "G:\\Repos\\algoriza-internship-199\\Vezeeta\\wwwroot\\Images\\Doctors\\89326158-672e-4565-b6eb-b094e622c93a.jpg",
+      "PackagePath": "staticwebassets\\Images\\Doctors\\89326158-672e-4565-b6eb-b094e622c93a.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WebApi.props",
+      "PackagePath": "build\\WebApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WebApi.props",
+      "PackagePath": "buildMultiTargeting\\WebApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WebApi.props",
+      "PackagePath": "buildTransitive\\WebApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

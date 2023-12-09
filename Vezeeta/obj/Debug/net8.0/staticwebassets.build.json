@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "lAVsf4/XP8OL4a3UKcpKodesbBfBaGYqErDYy8hI7Xs=",
+  "Hash": "+BgxWi+74efdbmHHlPE+Shx76r0x2REe9qakYE6nlFE=",
   "Source": "WebApi",
   "BasePath": "_content/WebApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebApi\\wwwroot",
+      "Source": "WebApi",
+      "ContentRoot": "G:\\Repos\\algoriza-internship-199\\Vezeeta\\wwwroot\\",
+      "BasePath": "_content/WebApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "G:\\Repos\\algoriza-internship-199\\Vezeeta\\wwwroot\\Images\\Doctors\\89326158-672e-4565-b6eb-b094e622c93a.jpg",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Repos\\algoriza-internship-199\\Vezeeta\\wwwroot\\",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "Images/Doctors/89326158-672e-4565-b6eb-b094e622c93a.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Doctors\\89326158-672e-4565-b6eb-b094e622c93a.jpg"
+    }
+  ]
 }

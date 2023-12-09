@@ -1,6 +1,7 @@
 ﻿using Core.Entities;
 using Infrastructure.Data;
 using Infrastructure.Repositeries;
+using Microsoft.EntityFrameworkCore;
 using Service.Abstractions;
 
 namespace Application.Services
@@ -16,9 +17,9 @@ namespace Application.Services
         }
 
 
-        public void Update(Specialization obj)
+        public async Task Update(Specialization obj)
         {
-            _db.Specializations.Update(obj);
+            await _db.Specializations.ExecuteUpdateAsync(s => s.SetProperty(p => p.Name , obj.Name));
         }
 
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F7OIgidqif/FP7zRGNT/vaYBsFXUVBZB8MX4/KUTGZuFDHgOxHZvmtvnTpmzLUvKtcppSQcxI87WeiCmNhN05g==",
+  "dgSpecHash": "z+cXzBNMUMYs7LLu2Q8SWoy2XSQsSGNvdERcDPa26529D6e3FdTF/fui7QDU0o8u7w2dAjjws577uK3f3FCNWw==",
   "success": true,
-  "projectFilePath": "G:\\Projects\\Vezeeta-Api\\Core\\Core.csproj",
+  "projectFilePath": "G:\\Repos\\algoriza-internship-199\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\7amzawy\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\7amzawy\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.0\\microsoft.aspnetcore.cryptography.internal.8.0.0.nupkg.sha512",

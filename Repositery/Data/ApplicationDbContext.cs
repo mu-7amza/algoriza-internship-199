@@ -17,7 +17,7 @@ namespace Infrastructure.Data
             public DbSet<ApplicationUser> ApplicationUsers { get; set; }
             public DbSet<Appointment> Appointments { get; set; }
             public DbSet<Specialization> Specializations { get; set; }
-            public DbSet<Request> Requests { get; set; }
+            public DbSet<Booking> Bookings { get; set; }
             public DbSet<Discount> Discounts { get; set; }
             public DbSet<Coupon> Coupons { get; set; }
             public DbSet<DoctorDay> DoctorDays { get; set; }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MHpvKy01wbYFCwweG9zHt4w6gC1/jsKw5asWjLB08v4j+BJqm+qNmFoz6kmKuph7Jf44ubm28MpJj65K0cGP/Q==",
+  "dgSpecHash": "mi0RbaWHEr+Nt3KS0tPECvyJ0QIrerpfeyRMF8aAHw9Sux9ijNmlpiyYXGJeqM1DdFEJcF8mHVOem8x+yD8ujA==",
   "success": true,
-  "projectFilePath": "G:\\Projects\\Vezeeta-Api\\Vezeeta\\WebApi.csproj",
+  "projectFilePath": "G:\\Repos\\algoriza-internship-199\\Vezeeta\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\7amzawy\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\7amzawy\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

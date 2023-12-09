@@ -5,6 +5,8 @@ using Infrastructure.Utility;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace WebApi.Controllers
 {
@@ -39,13 +41,13 @@ namespace WebApi.Controllers
                 if (doctorDto.file != null)
                 {
                     string imageFileName = Guid.NewGuid().ToString() + Path.GetExtension(doctorDto.file.FileName);
-                    string folderPath = Path.Combine(wwwRootPath, @"images\doctors");
+                    string folderPath = Path.Combine(wwwRootPath, @"Images\Doctors");
 
                     using (var stream = new FileStream(Path.Combine(folderPath, imageFileName), FileMode.Create))
                     {
                         doctorDto.file.CopyTo(stream);
                     }
-                    doctorDto.ImageUrl = @"\images\doctors\" + imageFileName;
+                    doctorDto.ImageUrl = @"\Images\Doctors\" + imageFileName;
                 }
 
 
@@ -69,6 +71,10 @@ namespace WebApi.Controllers
                 await _unitOfWork.Specialization.AddAsync(doctorToAdd.Specialization);
                 await _unitOfWork.SaveChangesAsync();
 
+                if(doctorDto.Password == null)
+                {
+                    doctorDto.Password = GenerateStrongPassword(15);
+                }
                 var result = await _userManager.CreateAsync(doctorToAdd, doctorDto.Password);
 
                 if (!result.Succeeded)
@@ -94,7 +100,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> EditDoctor([FromForm] string doctorId, [FromForm] DoctorDto doctorDto)
         {
 
-            var doctorFromDb = await _unitOfWork.ApplicationUser.GetAsync(u => u.Id == doctorId, includeProperities: "Specialization");
+            var doctorFromDb = await _unitOfWork.ApplicationUser.GetAsync(u => u.Id == doctorId, includeProperities: "Specialization",tracked:false);
 
             if (doctorFromDb == null)
             {
@@ -104,7 +110,7 @@ namespace WebApi.Controllers
             if (doctorDto.file != null)
             {
                 string imageFileName = Guid.NewGuid().ToString() + Path.GetExtension(doctorDto.file.FileName);
-                string folderPath = Path.Combine(_env.WebRootPath, @"images\doctors");
+                string folderPath = Path.Combine(_env.WebRootPath, @"Images\Doctors");
 
                 if (doctorDto.file != null)
                 {
@@ -123,49 +129,65 @@ namespace WebApi.Controllers
                     {
                         doctorDto.file.CopyTo(stream);
                     }
-                    doctorDto.ImageUrl = @"\images\doctors\" + imageFileName;
+                    doctorDto.ImageUrl = @"\Images\Doctors" + imageFileName;
                 }
             }
 
+            
+            doctorFromDb.FirstName = doctorDto.FirstName;
+            doctorFromDb.LastName = doctorDto.LastName;
+            doctorFromDb.Email = doctorDto.Email;
+            doctorFromDb.Gender = doctorDto.Gender.ToString();
+            doctorFromDb.DateOfBirth = doctorDto.DateOfBirth.ToString();
+            doctorFromDb.PhoneNumber = doctorDto.PhoneNumber;
+            doctorFromDb.ImageUrl = doctorDto.ImageUrl;
+            doctorFromDb.UserName = doctorDto.Email;
+            doctorFromDb.NormalizedEmail = doctorDto.Email.ToUpper();
+            doctorFromDb.NormalizedUserName = doctorDto.Email.ToUpper();
 
-            // Create doctor, Specialization
-            var doctorToModify = new ApplicationUser
-            {
-                FirstName = doctorDto.FirstName,
-                LastName = doctorDto.LastName,
-                UserName = doctorDto.Email,
-                Email = doctorDto.Email,
-                PhoneNumber = doctorDto.PhoneNumber,
-                DateOfBirth = doctorDto.DateOfBirth.ToString(),
-                ImageUrl = doctorDto.ImageUrl,
-                Gender = doctorDto.Gender.ToString(),
-            };
-
-            var result = await _userManager.UpdateAsync(doctorToModify);
-
-            if (!result.Succeeded)
-            {
-                return BadRequest(result.Errors.FirstOrDefault());
-            }
-
-
-            if (doctorFromDb.Email != doctorDto.Email)
-            {
+            _unitOfWork.ApplicationUser.Update(doctorFromDb);
+            await _unitOfWork.SaveChangesAsync();
+            
                 await _emailSender.SendEmailAsync(doctorDto.Email, "Your Personal Acccount Update ",
-                    $"<h3>Your Email : {doctorDto.Email}</h3><br>" +
-                    $"<h3>Your Password : {doctorDto.Password}</h3>");
-            }
+                   $"<h3>Your Email : {doctorDto.Email}</h3><br>" +
+                   $"<h3>Your Password : {doctorDto.Password}</h3>");
 
+                if (doctorDto.SpecializationName != null && doctorFromDb.Specialization != null)
+                {
+                    Specialization specialization = new()
+                    {
+                        Id = doctorFromDb.Specialization.Id,
+                        Name = doctorDto.SpecializationName
 
-            if (doctorDto.SpecializationName != doctorFromDb.Specialization.Name)
+                    };
+                    await _unitOfWork.Specialization.Update(specialization);
+                    await _unitOfWork.SaveChangesAsync();
+                }
+               
+            return Ok("Doctor Updated successfully");
+
+        }
+
+        public static string GenerateStrongPassword(int length)
+        {
+            const string validCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+
+            // Use RNGCryptoServiceProvider for better randomness
+            using (var rng = new RNGCryptoServiceProvider())
             {
+                // Generate a random byte array
+                byte[] randomBytes = new byte[length];
+                rng.GetBytes(randomBytes);
 
-                _unitOfWork.Specialization.Update(doctorFromDb.Specialization);
-                await _unitOfWork.SaveChangesAsync();
+                // Convert the random bytes to characters from the valid character set
+                StringBuilder passwordBuilder = new StringBuilder(length);
+                foreach (byte b in randomBytes)
+                {
+                    passwordBuilder.Append(validCharacters[b % validCharacters.Length]);
+                }
+
+                return passwordBuilder.ToString();
             }
-
-            return Ok("Doctor added successfully");
-
         }
     }
 }

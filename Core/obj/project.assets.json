@@ -2400,11 +2400,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Projects\\Vezeeta-Api\\Core\\Core.csproj",
+      "projectUniqueName": "G:\\Repos\\algoriza-internship-199\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "G:\\Projects\\Vezeeta-Api\\Core\\Core.csproj",
+      "projectPath": "G:\\Repos\\algoriza-internship-199\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\7amzawy\\.nuget\\packages\\",
-      "outputPath": "G:\\Projects\\Vezeeta-Api\\Core\\obj\\",
+      "outputPath": "G:\\Repos\\algoriza-internship-199\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

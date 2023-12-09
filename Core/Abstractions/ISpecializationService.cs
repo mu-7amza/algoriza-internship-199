@@ -5,6 +5,6 @@ namespace Service.Abstractions
 {
     public interface ISpecializationService : IRepository<Specialization>
     {
-        void Update(Specialization obj);
+        Task Update(Specialization obj);
     }
 }

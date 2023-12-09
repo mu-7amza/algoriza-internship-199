@@ -4,7 +4,6 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,6 +23,10 @@
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Repositery\Infrastructure.csproj" />
     <ProjectReference Include="..\Service\Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\Doctors\" />
   </ItemGroup>
 
 </Project>

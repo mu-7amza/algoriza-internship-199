@@ -89,7 +89,7 @@ namespace Infrastructure.Repositeries
                     query = query.Include(includeProp);
                 }
             }
-            return await query.FirstOrDefaultAsync();
+            return await query.AsNoTracking().FirstOrDefaultAsync();
         }
 
      
