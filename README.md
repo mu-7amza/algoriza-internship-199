@@ -26,17 +26,21 @@ The project is structured with separation of concerns in mind, following Onion A
 ### 3. Dependency Injection
 
 - **Service Registration**: Dependencies such as repositories and the unit of work are registered in the dependency injection container in `Program.cs`.
+### 4.Sending Mails
 
-### 4. ASP.NET Core Web API
+- **DoctorRegistration**: Doctors can sign in with credentials that have been sent to their mail.
+  ![Screenshot_20231209-073454_Gmail](https://github.com/mu-7amza/algoriza-internship-199/assets/109220973/f5463379-d4f6-4bc3-9988-4add18dc6c79)
+
+### 5. ASP.NET Core Web API
 
 - **Controllers**: API endpoints are implemented in controllers within the `Application` layer.
 - **DTOs**: Data Transfer Objects used for input and output to API.
 
-### 5. Swagger Integration
+### 6. Swagger Integration
 
 - **Swagger**: API documentation and testing is available using Swagger. Access the Swagger UI at `/swagger` endpoint.
 
-### 6. Sample Usage
+### 7. Sample Usage
 
 - **User Service**: Example service (`UserService`) demonstrating how to use repositories and the unit of work in the application layer.
 
