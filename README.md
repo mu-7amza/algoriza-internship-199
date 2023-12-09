@@ -25,7 +25,7 @@ The project is structured with separation of concerns in mind, following Onion A
 
 ### 3. Dependency Injection
 
-- **Service Registration**: Dependencies such as repositories and the unit of work are registered in the dependency injection container in `Startup.cs`.
+- **Service Registration**: Dependencies such as repositories and the unit of work are registered in the dependency injection container in `Program.cs`.
 
 ### 4. ASP.NET Core Web API
 
