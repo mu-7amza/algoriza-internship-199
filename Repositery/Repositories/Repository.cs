@@ -36,7 +36,8 @@ namespace Infrastructure.Repositeries
             _dbSet.RemoveRange(entities);
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>>? filter = null, string? includeProperities = null)
+
+        public async Task<IEnumerable<T>> GetAllPaginatedFilterAsync(Expression<Func<T, bool>>? filter, int page = 1, int pageSize = 5 , string? includeProperities = null)
         {
             IQueryable<T> query = _dbSet;
             if (filter != null)
@@ -52,22 +53,8 @@ namespace Infrastructure.Repositeries
                 }
             }
 
-            return await query.ToListAsync();
-        }
-
-        public async Task<IEnumerable<T>> GetAllPaginatedFilterAsync(Expression<Func<T, bool>>? filter, int page = 1, int pageSize = 5)
-        {
-            var query = _db.Set<T>().AsQueryable();
-
-            if(filter != null)
-            {
-                query = query.Where(filter);
-            }
-
             return await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
         }
-
-       
 
         public async Task<T> GetAsync(Expression<Func<T, bool>> Filter, string? includeProperities = null, bool tracked = false)
         {

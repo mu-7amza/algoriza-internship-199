@@ -15,14 +15,6 @@ namespace Core.Entities
 
         public string Status { get; set; }
 
-        public string DoctorId { get; set; }
-        [ForeignKey(nameof(DoctorId))]
-        public ApplicationUser? Doctor { get; set; }
-
-        public string PatientId { get; set; }
-        [ForeignKey(nameof(PatientId))]
-        public ApplicationUser? Patient { get; set; }
-
         public int AppointmentId { get; set; }
         [ForeignKey(nameof(AppointmentId))]
         public Appointment? Appointment { get; set; }

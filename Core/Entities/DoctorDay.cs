@@ -11,10 +11,7 @@ namespace Core.Entities
     {
         public int Id { get; set; }
 
-        public string DoctorId { get; set; }
-
-        [ForeignKey(nameof(DoctorId))]
-        public ApplicationUser Doctor { get; set; }
+        public string? DoctorId { get; set; }
 
         public string Day { get; set; }
 

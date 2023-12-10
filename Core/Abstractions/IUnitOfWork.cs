@@ -12,6 +12,8 @@ namespace Core.Abstractions
         IApplicationUserService ApplicationUser { get; }
         ISpecializationService Specialization { get; }
         IAppointmentService Appointment { get; }
+        ICouponService Coupon { get; }
+        IDiscountService Discount { get; }
         Task SaveChangesAsync();
     }
 }

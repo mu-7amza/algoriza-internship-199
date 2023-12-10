@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "z+cXzBNMUMYs7LLu2Q8SWoy2XSQsSGNvdERcDPa26529D6e3FdTF/fui7QDU0o8u7w2dAjjws577uK3f3FCNWw==",
+  "dgSpecHash": "mTpwBo9vJ4mKveSd2o7yacgTxbaZTqSy6IaCUyAlmDen/LXBLNOzibB53+rsJ6V14HGeNWcwaWlw0wUY+XoqUg==",
   "success": true,
   "projectFilePath": "G:\\Repos\\algoriza-internship-199\\Core\\Core.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "C:\\Users\\7amzawy\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
     "C:\\Users\\7amzawy\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\7amzawy\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\7amzawy\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\7amzawy\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\7amzawy\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\7amzawy\\.nuget\\packages\\system.composition\\6.0.0\\system.composition.6.0.0.nupkg.sha512",

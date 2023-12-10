@@ -16,7 +16,7 @@ namespace Core.Entities
         [Required]
         public string Code { get; set; }
 
-        public int DiscountId { get; set; }
+        public int? DiscountId { get; set; }
 
         [ForeignKey(nameof(DiscountId))]
         public Discount Discount { get; set; }

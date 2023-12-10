@@ -12,11 +12,11 @@ namespace Core.Entities
     public class ApplicationUser : IdentityUser
     {
         [Required]
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string FirstName { get; set; }
 
         [Required]
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string LastName { get; set; }
 
         [Required]
@@ -27,15 +27,21 @@ namespace Core.Entities
 
         public string? ImageUrl { get; set; }
 
-        [NotMapped]
-        public ICollection<Appointment>? Appointments { get; set; }
+        public int? AppointmentId {  get; set; }
+        [ForeignKey(nameof(AppointmentId))]
+        public Appointment? Appointment { get; set; }
 
-        public int? SpecializationId { get; set; }
-        [ForeignKey(nameof(SpecializationId))]
+        public int? SpecializId { get; set; }
+        [ForeignKey(nameof(SpecializId))]
         public Specialization? Specialization { get; set; }
 
-        [NotMapped]
-        public ICollection<Discount>? Discounts { get; set; }
+        public int? DiscountId { get; set; }
+        [ForeignKey(nameof(DiscountId))]
+        public Discount? Discount { get; set; }
+
+        public int? BookingId { get; set; }
+        [ForeignKey(nameof(BookingId))]
+        public Booking? Booking { get; set; }
 
 
     }

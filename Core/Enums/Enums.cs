@@ -8,23 +8,23 @@ namespace Core.Enums
 {
     public enum DiscountType
     {
-        Percentage = 0,
-        Value = 1
+        Percentage = 1,
+        Value = 2
     }
     public enum Gender
     {
-        Female = 0,
-        Male = 1
+        Female = 1,
+        Male = 2
     }
     public enum DayOfWeekType
     {
-        Saturday = 0,
-        Sunday = 1,
-        Monday = 2,
-        Tuesday = 3,
-        Wednesday = 4,
-        Thursday = 5,
-        Friday = 6
+        Saturday = 1,
+        Sunday = 2,
+        Monday = 3,
+        Tuesday = 4,
+        Wednesday =5,
+        Thursday = 6,
+        Friday = 7
     }
 }
 

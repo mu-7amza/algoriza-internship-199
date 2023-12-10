@@ -448,3 +448,6 @@ G:\Repos\algoriza-internship-199\Vezeeta\obj\Debug\net8.0\refint\WebApi.dll
 G:\Repos\algoriza-internship-199\Vezeeta\obj\Debug\net8.0\WebApi.pdb
 G:\Repos\algoriza-internship-199\Vezeeta\obj\Debug\net8.0\WebApi.genruntimeconfig.cache
 G:\Repos\algoriza-internship-199\Vezeeta\obj\Debug\net8.0\ref\WebApi.dll
+G:\Repos\algoriza-internship-199\Vezeeta\bin\Debug\net8.0\AutoMapper.dll
+G:\Repos\algoriza-internship-199\Vezeeta\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+G:\Repos\algoriza-internship-199\Vezeeta\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

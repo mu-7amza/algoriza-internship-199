@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
-namespace Core.Dto
+namespace Core.Dtos
 {
     public class DoctorDto
     {

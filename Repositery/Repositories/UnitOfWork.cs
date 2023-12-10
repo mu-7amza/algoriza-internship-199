@@ -9,20 +9,14 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositeries
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork(ApplicationDbContext db, IApplicationUserService ApplicationUser, ISpecializationService specialization, IAppointmentService appointment , ICouponService coupon , IDiscountService discount) : IUnitOfWork
     {
-        private readonly ApplicationDbContext _db;
-        public IApplicationUserService ApplicationUser { get; private set; }
-        public ISpecializationService Specialization { get; private set; }
-        public IAppointmentService Appointment { get; private set; }
-
-        public UnitOfWork(ApplicationDbContext db, IApplicationUserService ApplicationUser, ISpecializationService specialization, IAppointmentService appointment)
-        {
-            _db = db;
-            this.ApplicationUser = ApplicationUser;
-            Specialization = specialization;
-            Appointment = appointment;
-        }
+        private readonly ApplicationDbContext _db = db;
+        public IApplicationUserService ApplicationUser { get; private set; } = ApplicationUser;
+        public ISpecializationService Specialization { get; private set; } = specialization;
+        public IAppointmentService Appointment { get; private set; } = appointment;
+        public ICouponService Coupon { get; private set; } = coupon;
+        public IDiscountService Discount { get; private set; } = discount;
 
         public async Task SaveChangesAsync()
         {

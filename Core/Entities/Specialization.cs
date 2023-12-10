@@ -14,8 +14,5 @@ namespace Core.Entities
         [Required]
         public string Name { get; set; }
 
-        public string? DoctorId { get; set; }
-
-        public List<ApplicationUser>? Doctors { get; set; }
     }
 }

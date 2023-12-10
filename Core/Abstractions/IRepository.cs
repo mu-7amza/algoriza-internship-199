@@ -10,8 +10,7 @@ namespace Core.Abstractions
     public interface IRepository<T> where T : class
     {
         Task<T> GetAsync(Expression<Func<T, bool>> Filter, string? includeProperities = null, bool tracked = false);
-        Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>>? filter = null, string? includeProperities = null);
-        Task<IEnumerable<T>> GetAllPaginatedFilterAsync(Expression<Func<T, bool>>? filter , int page = 0 , int pageSize = 0);
+        Task<IEnumerable<T>> GetAllPaginatedFilterAsync(Expression<Func<T, bool>>? filter = null , int page = 0 , int pageSize = 0, string? includeProperities = null);
         Task AddAsync(T entity);
         void Delete(T entity);
         void DeleteRange(IEnumerable<T> entities);

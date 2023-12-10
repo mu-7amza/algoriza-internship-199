@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Core.Entities
@@ -12,12 +13,14 @@ namespace Core.Entities
     public class Discount
     {
         public int Id { get; set; }
+
         [Required]
         public string Name { get; set; } // A name or description for the discount
+
         [Required]
         [Precision(18, 2)]
         public decimal Value { get; set; }
-        [Required]
+        
         public string DiscountType { get; set; }
     }
 }

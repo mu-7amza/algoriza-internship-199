@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+BgxWi+74efdbmHHlPE+Shx76r0x2REe9qakYE6nlFE=",
+  "Hash": "m2FA5JbVF+jjtnbjLCw08ywqVjgI2unT5uOPrMI0uaE=",
   "Source": "WebApi",
   "BasePath": "_content/WebApi",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "G:\\Repos\\algoriza-internship-199\\Vezeeta\\wwwroot\\Images\\Doctors\\89326158-672e-4565-b6eb-b094e622c93a.jpg",
+      "Identity": "G:\\Repos\\algoriza-internship-199\\Vezeeta\\wwwroot\\Images\\Doctors\\b8d52cac-2f6d-47b1-8ed3-3cf562617f04.jpg",
       "SourceId": "WebApi",
       "SourceType": "Discovered",
       "ContentRoot": "G:\\Repos\\algoriza-internship-199\\Vezeeta\\wwwroot\\",
       "BasePath": "_content/WebApi",
-      "RelativePath": "Images/Doctors/89326158-672e-4565-b6eb-b094e622c93a.jpg",
+      "RelativePath": "Images/Doctors/b8d52cac-2f6d-47b1-8ed3-3cf562617f04.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -33,7 +33,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Doctors\\89326158-672e-4565-b6eb-b094e622c93a.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\Doctors\\b8d52cac-2f6d-47b1-8ed3-3cf562617f04.jpg"
+    },
+    {
+      "Identity": "G:\\Repos\\algoriza-internship-199\\Vezeeta\\wwwroot\\Images\\Patients\\0821e74b-f1dc-4951-ae36-f9fcf344dd94.jpg",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Repos\\algoriza-internship-199\\Vezeeta\\wwwroot\\",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "Images/Patients/0821e74b-f1dc-4951-ae36-f9fcf344dd94.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Patients\\0821e74b-f1dc-4951-ae36-f9fcf344dd94.jpg"
     }
   ]
 }

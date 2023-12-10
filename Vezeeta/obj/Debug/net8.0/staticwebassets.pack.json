@@ -1,8 +1,12 @@
 {
   "Files": [
     {
-      "Id": "G:\\Repos\\algoriza-internship-199\\Vezeeta\\wwwroot\\Images\\Doctors\\89326158-672e-4565-b6eb-b094e622c93a.jpg",
-      "PackagePath": "staticwebassets\\Images\\Doctors\\89326158-672e-4565-b6eb-b094e622c93a.jpg"
+      "Id": "G:\\Repos\\algoriza-internship-199\\Vezeeta\\wwwroot\\Images\\Doctors\\b8d52cac-2f6d-47b1-8ed3-3cf562617f04.jpg",
+      "PackagePath": "staticwebassets\\Images\\Doctors\\b8d52cac-2f6d-47b1-8ed3-3cf562617f04.jpg"
+    },
+    {
+      "Id": "G:\\Repos\\algoriza-internship-199\\Vezeeta\\wwwroot\\Images\\Patients\\0821e74b-f1dc-4951-ae36-f9fcf344dd94.jpg",
+      "PackagePath": "staticwebassets\\Images\\Patients\\0821e74b-f1dc-4951-ae36-f9fcf344dd94.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebApi.Microsoft.AspNetCore.StaticWebAssets.props",
