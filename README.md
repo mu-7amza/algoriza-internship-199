@@ -69,6 +69,3 @@ Access the API documentation and test the endpoints using Swagger UI:
 
 - [Swagger UI](http://localhost:5000/swagger)
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
