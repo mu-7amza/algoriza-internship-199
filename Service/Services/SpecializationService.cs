@@ -3,6 +3,8 @@ using Infrastructure.Data;
 using Infrastructure.Repositeries;
 using Microsoft.EntityFrameworkCore;
 using Service.Abstractions;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace Application.Services
 {

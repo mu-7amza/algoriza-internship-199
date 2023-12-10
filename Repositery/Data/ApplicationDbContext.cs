@@ -20,8 +20,8 @@ namespace Infrastructure.Data
             public DbSet<Booking> Bookings { get; set; }
             public DbSet<Discount> Discounts { get; set; }
             public DbSet<Coupon> Coupons { get; set; }
-            public DbSet<DoctorDay> DoctorDays { get; set; }
-            public DbSet<DoctorTime> DoctorTime { get; set; }
+            public DbSet<Day> DoctorDays { get; set; }
+            public DbSet<Time> DoctorTime { get; set; }
 
 
 

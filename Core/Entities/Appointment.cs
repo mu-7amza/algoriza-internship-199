@@ -15,12 +15,17 @@ namespace Core.Entities
         [Precision(18, 2)]
         public decimal Price { get; set; }
 
-        public string DoctorId { get; set; }
+        public string? DoctorId { get; set; }
         [ForeignKey(nameof(DoctorId))]
-        public ApplicationUser Doctor { get; set; }
+        public ApplicationUser? Doctor { get; set; }
 
-        public int DoctorDayId { get; set; }
-        [ForeignKey(nameof(DoctorDayId))]
-        public DoctorDay? DoctorDay { get; set; }
+        public int? DayId { get; set; }
+        [ForeignKey(nameof(DayId))]
+        public Day? Day { get; set; }   
+
+        public int? TimeId { get; set; }
+        [ForeignKey(nameof(TimeId))]
+        public Time? Time { get; set; }
+
     }
 }

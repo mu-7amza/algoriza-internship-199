@@ -14,6 +14,7 @@ namespace Core.Abstractions
         IAppointmentService Appointment { get; }
         ICouponService Coupon { get; }
         IDiscountService Discount { get; }
+        IBookingService Booking { get; }
         Task SaveChangesAsync();
     }
 }

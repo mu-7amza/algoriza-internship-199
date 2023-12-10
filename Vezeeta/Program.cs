@@ -83,6 +83,7 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 // Add Application Services
 builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+builder.Services.AddScoped<IBookingService, BookingService>();
 builder.Services.AddScoped<IApplicationUserService, ApplicationUserService>();
 builder.Services.AddScoped<ISpecializationService, SpecializationService>();
 builder.Services.AddScoped<IDiscountService, DiscountService>();

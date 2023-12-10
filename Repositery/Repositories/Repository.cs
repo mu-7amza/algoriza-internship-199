@@ -56,6 +56,25 @@ namespace Infrastructure.Repositeries
             return await query.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
         }
 
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter, string? includeProperities = null)
+        {
+            IQueryable<T> query = _dbSet;
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+            if (!string.IsNullOrEmpty(includeProperities))
+            {
+                foreach (var includeProp in includeProperities
+                    .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProp);
+                }
+            }
+
+            return query.ToList();
+        }
+
         public async Task<T> GetAsync(Expression<Func<T, bool>> Filter, string? includeProperities = null, bool tracked = false)
         {
             IQueryable<T> query;

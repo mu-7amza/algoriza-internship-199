@@ -43,6 +43,7 @@ namespace Core.Entities
         [ForeignKey(nameof(BookingId))]
         public Booking? Booking { get; set; }
 
+        public ICollection<Day>? Days { get; set; }
 
     }
 }

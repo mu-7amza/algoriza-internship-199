@@ -15,7 +15,7 @@ namespace WebApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize (Roles = "Admin")]
+    //[Authorize (Roles = "Admin")]
     public class AdminController : ControllerBase
     {
 
@@ -29,6 +29,73 @@ namespace WebApi.Controllers
             _env = env;
             _emailSender = emailSender;
             _unitOfWork = unitOfWork;
+        }
+
+        [HttpGet("GetNumOfDoctors")]
+        public async Task<IActionResult> GetNumOfDoctors()
+        {
+
+            IEnumerable<ApplicationUser> doctorList = await _unitOfWork.ApplicationUser.GetAllPaginatedFilterAsync(
+                filter: doctor => !string.IsNullOrEmpty(doctor.Specialization.Name));
+
+            if (doctorList.Count() > 0)
+            {
+                return Ok(doctorList.Count());
+            }
+            else
+            {
+                return Ok(0);
+            }
+        }
+
+        [HttpGet("GetNumOfPatients")]
+        public async Task<IActionResult> GetNumOfPatients()
+        {
+
+            IEnumerable<ApplicationUser> patientList = await _unitOfWork.ApplicationUser.GetAllPaginatedFilterAsync(
+                filter: patient => !string.IsNullOrEmpty(patient.Booking.Status));
+
+            if (patientList.Count() > 0)
+            {
+                return Ok(patientList.Count());
+            }
+            else
+            {
+                return Ok(0);
+            }
+        }
+
+        [HttpGet("Patient/Bookings/GetAll")]
+        public async Task<IActionResult> GetNumOfBookings()
+
+
+        {
+            ClaimsIdentity claims = (ClaimsIdentity)User.Identity;
+            var pateintEmail = claims.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+            var patient = await _userManager.FindByEmailAsync(pateintEmail);
+
+            IEnumerable<Booking> bookingList = await _unitOfWork.Booking.GetAllPaginatedFilterAsync();
+
+            if (bookingList != null && bookingList.Count() > 0)
+            {
+                return Ok(bookingList.Count());
+            }
+            else
+            {
+                return NotFound(0);
+            }
+        }
+
+        [HttpGet("TopDoctors")]
+        public IActionResult GetTopDoctors()
+        {
+            IEnumerable<ApplicationUser> topDoctors = _unitOfWork.ApplicationUser.GetAll(u => u.Booking != null, includeProperities: "Booking")
+                .OrderByDescending(u => u.Booking.Id)
+                .Take(10)
+                .ToList();
+
+            return Ok(topDoctors);
         }
 
         [HttpGet("Doctor/GetAll")]
@@ -278,30 +345,6 @@ namespace WebApi.Controllers
             }
         }
 
-        public static string GenerateStrongPassword(int length)
-        {
-            const string validCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
-
-            // Use RNGCryptoServiceProvider for better randomness
-            using (var rng = new RNGCryptoServiceProvider())
-            {
-                // Generate a random byte array
-                byte[] randomBytes = new byte[length];
-                rng.GetBytes(randomBytes);
-
-                // Convert the random bytes to characters from the valid character set
-                StringBuilder passwordBuilder = new StringBuilder(length);
-                foreach (byte b in randomBytes)
-                {
-                    passwordBuilder.Append(validCharacters[b % validCharacters.Length]);
-                }
-
-                return passwordBuilder.ToString();
-            }
-        }
-
-       
-
         [HttpPost("Discount/Add")]
         public async Task<IActionResult> AddDiscount([FromForm] DiscountDto discountDto)
         {
@@ -398,6 +441,28 @@ namespace WebApi.Controllers
             await _unitOfWork.SaveChangesAsync();
 
             return Ok("Coupon Deactivated successfully");
+        }
+
+        public static string GenerateStrongPassword(int length)
+        {
+            const string validCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+
+            // Use RNGCryptoServiceProvider for better randomness
+            using (var rng = new RNGCryptoServiceProvider())
+            {
+                // Generate a random byte array
+                byte[] randomBytes = new byte[length];
+                rng.GetBytes(randomBytes);
+
+                // Convert the random bytes to characters from the valid character set
+                StringBuilder passwordBuilder = new StringBuilder(length);
+                foreach (byte b in randomBytes)
+                {
+                    passwordBuilder.Append(validCharacters[b % validCharacters.Length]);
+                }
+
+                return passwordBuilder.ToString();
+            }
         }
 
     }

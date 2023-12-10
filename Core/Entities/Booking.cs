@@ -21,11 +21,15 @@ namespace Core.Entities
 
         public int TimeId { get; set; }
         [ForeignKey(nameof(TimeId))]
-        public DoctorTime? DoctorTime { get; set; }
+        public Time? DoctorTime { get; set; }
 
         public int DayId { get; set; }
         [ForeignKey(nameof(DayId))]
-        public DoctorDay? DoctorDay { get; set; }
+        public Day? DoctorDay { get; set; }
+
+        public int? CouponId { get; set; }
+        [ForeignKey(nameof(CouponId))]
+        public Coupon? Coupon { get; set; }
 
 
     }

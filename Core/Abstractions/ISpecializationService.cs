@@ -1,5 +1,6 @@
 ﻿using Core.Abstractions;
 using Core.Entities;
+using System.Linq.Expressions;
 
 namespace Service.Abstractions
 {
