@@ -67,5 +67,5 @@ The project is structured with separation of concerns in mind, following Onion A
 
 Access the API documentation and test the endpoints using Swagger UI:
 
-- [Swagger UI](http://localhost:5000/swagger)
+- [Swagger UI](http://localhost:3001/swagger)
 
